@@ -13,6 +13,10 @@ kotlin {
         compileSdk = 36
         minSdk = 26
         namespace = "io.github.neronguyenvn.nerochat.composeapp"
+
+        androidResources {
+            enable = true
+        }
     }
 
     listOf(
