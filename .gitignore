@@ -5,6 +5,7 @@
 xcuserdata
 !src/**/build/
 local.properties
+gradle-daemon-jvm.properties
 .idea
 .DS_Store
 captures
