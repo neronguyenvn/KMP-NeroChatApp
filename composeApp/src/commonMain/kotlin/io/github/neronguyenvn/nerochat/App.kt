@@ -22,8 +22,8 @@ import kmpnerochatapp.composeapp.generated.resources.Res
 import kmpnerochatapp.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 
-@Composable
 @Preview
+@Composable
 fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }

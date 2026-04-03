@@ -33,14 +33,18 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.jetbrains.compose.components.resources)
             implementation(libs.jetbrains.compose.material3)
-            implementation(libs.jetbrains.compose.resources)
-            implementation(libs.jetbrains.compose.tooling.preview)
+            implementation(libs.jetbrains.compose.ui.tooling.preview)
         }
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
         }
     }
+}
+
+dependencies {
+    androidRuntimeClasspath(libs.jetbrains.compose.ui.tooling)
 }
 
 compose.desktop {
