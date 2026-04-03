@@ -33,6 +33,7 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.core.designsystem)
             implementation(libs.jetbrains.compose.components.resources)
             implementation(libs.jetbrains.compose.material3)
             implementation(libs.jetbrains.compose.ui.tooling.preview)
