@@ -7,7 +7,7 @@ kotlin = "2.3.20"
 # Jetbrains Compose
 compose-hot-reload = "1.0.0"
 compose-multiplatform = "1.10.3"
-compose-material3= "1.9.0"
+compose-material3 = "1.9.0"
 
 # AndroidX
 androidx-activity = "1.13.0"
@@ -35,6 +35,9 @@ arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow"
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 # Jetbrains Kotlin
