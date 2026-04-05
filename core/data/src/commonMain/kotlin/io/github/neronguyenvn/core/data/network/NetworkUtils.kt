@@ -3,14 +3,76 @@ package io.github.neronguyenvn.core.data.network
 import arrow.core.Either
 import arrow.core.raise.either
 import io.github.neronguyenvn.core.domain.util.DataError
+import io.ktor.client.HttpClient
 import io.ktor.client.call.NoTransformationFoundException
 import io.ktor.client.call.body
+import io.ktor.client.request.HttpRequestBuilder
+import io.ktor.client.request.delete
+import io.ktor.client.request.get
+import io.ktor.client.request.parameter
+import io.ktor.client.request.post
+import io.ktor.client.request.setBody
+import io.ktor.client.request.url
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.isSuccess
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 import kotlinx.serialization.SerializationException
+
+suspend inline fun <reified Response> HttpClient.get(
+    route: String,
+    queryParams: Map<String, Any> = emptyMap(),
+    noinline block: HttpRequestBuilder.() -> Unit = {}
+): Either<DataError.Network, Response> = safeCall {
+    get { prepareRequest(route, queryParams, block) }
+}
+
+
+suspend inline fun <reified Request, reified Response> HttpClient.post(
+    route: String,
+    body: Request,
+    queryParams: Map<String, Any> = mapOf(),
+    noinline block: HttpRequestBuilder.() -> Unit = {}
+): Either<DataError.Network, Response> = safeCall {
+    post {
+        setBody(body)
+        prepareRequest(route, queryParams, block)
+    }
+}
+
+suspend inline fun <reified Request, reified Response : Any> HttpClient.put(
+    route: String,
+    body: Request,
+    queryParams: Map<String, Any> = mapOf(),
+    noinline block: HttpRequestBuilder.() -> Unit = {}
+): Either<DataError.Network, Response> = safeCall {
+    post {
+        setBody(body)
+        prepareRequest(route, queryParams, block)
+    }
+}
+
+suspend inline fun <reified Response> HttpClient.delete(
+    route: String,
+    queryParams: Map<String, Any>,
+    noinline block: HttpRequestBuilder.() -> Unit = {}
+): Either<DataError.Network, Response> = safeCall {
+    delete { prepareRequest(route, queryParams, block) }
+}
+
+
+fun HttpRequestBuilder.prepareRequest(
+    route: String,
+    queryParams: Map<String, Any> = emptyMap(),
+    block: HttpRequestBuilder.() -> Unit = {}
+) {
+    url(constructRoute(route))
+    queryParams.forEach { (key, value) ->
+        parameter(key, value)
+    }
+    block()
+}
 
 suspend inline fun <reified T> safeCall(
     execute: suspend () -> HttpResponse
