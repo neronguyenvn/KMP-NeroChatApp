@@ -12,6 +12,10 @@ compose-material3= "1.9.0"
 # AndroidX
 androidx-activity = "1.13.0"
 
+# Third party
+arrow = "2.2.2.1"
+ktor = "3.4.2"
+
 [libraries]
 # Jetbrains Compose
 jetbrains-compose-components-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
@@ -23,6 +27,14 @@ jetbrains-compose-ui-tooling-preview = { group = "org.jetbrains.compose.ui", nam
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+
+# Arrow
+arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
+
+# Ktor
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 
 [plugins]
 # Jetbrains Kotlin

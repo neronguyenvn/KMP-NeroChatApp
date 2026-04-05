@@ -1,13 +1,12 @@
 package io.github.neronguyenvn.core.domain.util
 
 sealed interface DataError {
-    enum class Remote: DataError {
+    enum class Network : DataError {
         BadRequest,
         RequestTimeout,
         Unauthorized,
         Forbidden,
         NotFound,
-        Conflict,
         TooManyRequests,
         NoInternet,
         PayloadTooLarge,
@@ -17,7 +16,7 @@ sealed interface DataError {
         Unknown
     }
 
-    enum class Local: DataError {
+    enum class Local : DataError {
         DiskFull,
         NotFound,
         Unknown
