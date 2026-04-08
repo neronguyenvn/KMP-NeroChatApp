@@ -17,13 +17,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import io.github.neronguyenvn.core.designsystem.components.ThemePreviews
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 import kmpnerochatapp.composeapp.generated.resources.Res
 import kmpnerochatapp.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 
-@Preview
+@ThemePreviews
 @Composable
 fun App() {
     NeroTheme {
