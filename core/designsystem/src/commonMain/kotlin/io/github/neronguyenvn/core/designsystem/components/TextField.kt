@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import io.github.neronguyenvn.core.designsystem.components.internal.TextFieldLayout
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
@@ -148,7 +149,7 @@ fun NeroPasswordTextField(
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroTextFieldEmptyPreview() {
     NeroTheme {
@@ -162,7 +163,7 @@ fun NeroTextFieldEmptyPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroTextFieldFilledPreview() {
     NeroTheme {
@@ -178,7 +179,7 @@ fun NeroTextFieldFilledPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroTextFieldDisabledPreview() {
     NeroTheme {
@@ -193,7 +194,7 @@ fun NeroTextFieldDisabledPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroTextFieldErrorPreview() {
     NeroTheme {
@@ -208,7 +209,7 @@ fun NeroTextFieldErrorPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroPasswordTextFieldEmptyPreview() {
     NeroTheme {
@@ -222,7 +223,7 @@ fun NeroPasswordTextFieldEmptyPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroPasswordTextFieldFilledPreview() {
     NeroTheme {
@@ -236,7 +237,7 @@ fun NeroPasswordTextFieldFilledPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroPasswordTextFieldErrorPreview() {
     NeroTheme {

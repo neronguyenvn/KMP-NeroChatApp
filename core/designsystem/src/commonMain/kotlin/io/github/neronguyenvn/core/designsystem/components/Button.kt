@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 import io.github.neronguyenvn.core.designsystem.theme.extended
@@ -134,7 +135,7 @@ fun NeroButton(
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroButtonPreviews() {
     NeroTheme {

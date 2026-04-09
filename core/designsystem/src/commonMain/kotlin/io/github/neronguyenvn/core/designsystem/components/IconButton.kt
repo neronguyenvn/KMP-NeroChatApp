@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 import io.github.neronguyenvn.core.designsystem.theme.extended
@@ -55,7 +56,7 @@ fun NeroFloatingActionButton(
     )
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroIconButtonPreview() {
     NeroTheme {
@@ -68,7 +69,7 @@ fun NeroIconButtonPreview() {
     }
 }
 
-@ThemePreviews
+@PreviewLightDark
 @Composable
 fun NeroFloatingActionButtonPreview() {
     NeroTheme {
