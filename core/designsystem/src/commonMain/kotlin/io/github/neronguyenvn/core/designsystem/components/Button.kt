@@ -137,7 +137,7 @@ fun NeroButton(
 
 @PreviewLightDark
 @Composable
-fun NeroButtonPreviews() {
+fun NeroButtonPreview() {
     NeroTheme {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
             NeroButtonStyle.entries.forEach {
