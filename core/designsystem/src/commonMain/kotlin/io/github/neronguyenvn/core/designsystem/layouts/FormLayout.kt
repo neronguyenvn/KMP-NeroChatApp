@@ -38,64 +38,14 @@ fun NeroFormLayout(
 ) {
     when (currentWindowConfig()) {
         WindowConfig.MobilePortrait -> {
-            NeroSurface(
-                modifier = modifier,
-                header = {
-                    Spacer(modifier = Modifier.height(32.dp))
-                    logo()
-                    Spacer(modifier = Modifier.height(32.dp))
-                }
-            ) {
-                AuthHeaderSection(
-                    headerText = headerText,
-                    errorText = errorText
-                )
-                Spacer(modifier = Modifier.height(24.dp))
-                formContent()
-            }
-        }
-
-        WindowConfig.MobileLandscape -> {
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(24.dp),
-                modifier = modifier
-                    .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.background)
-                    .padding(top = 24.dp)
-                    .padding(horizontal = 24.dp)
-            ) {
-                Column(modifier = Modifier.weight(1f)) {
-                    logo()
-                    Spacer(modifier = Modifier.height(24.dp))
-                    AuthHeaderSection(
-                        headerText = headerText,
-                        errorText = errorText
-                    )
-                }
-                NeroSurface(modifier = Modifier.weight(1f)) {
-                    formContent()
-                }
-            }
-        }
-
-        else -> {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-                modifier = modifier
-                    .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.background)
-
-            ) {
-                logo()
-                Spacer(modifier = Modifier.height(32.dp))
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier
-                        .width(480.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(MaterialTheme.colorScheme.surface)
-                        .padding(vertical = 24.dp)
+            Scaffold { innerPadding ->
+                NeroSurface(
+                    modifier = modifier.padding(innerPadding),
+                    header = {
+                        Spacer(modifier = Modifier.height(32.dp))
+                        logo()
+                        Spacer(modifier = Modifier.height(32.dp))
+                    }
                 ) {
                     AuthHeaderSection(
                         headerText = headerText,
@@ -103,6 +53,61 @@ fun NeroFormLayout(
                     )
                     Spacer(modifier = Modifier.height(24.dp))
                     formContent()
+                }
+            }
+        }
+
+        WindowConfig.MobileLandscape -> {
+            Scaffold { innerPadding ->
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(24.dp),
+                    modifier = modifier
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                        .padding(top = 24.dp)
+                        .padding(horizontal = 24.dp)
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        logo()
+                        Spacer(modifier = Modifier.height(24.dp))
+                        AuthHeaderSection(
+                            headerText = headerText,
+                            errorText = errorText
+                        )
+                    }
+                    NeroSurface(modifier = Modifier.weight(1f)) {
+                        formContent()
+                    }
+                }
+            }
+        }
+
+        else -> {
+            Scaffold { innerPadding ->
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = modifier
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                ) {
+                    logo()
+                    Spacer(modifier = Modifier.height(32.dp))
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .width(480.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.surface)
+                            .padding(vertical = 24.dp)
+                    ) {
+                        AuthHeaderSection(
+                            headerText = headerText,
+                            errorText = errorText
+                        )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        formContent()
+                    }
                 }
             }
         }

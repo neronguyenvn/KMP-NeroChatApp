@@ -48,9 +48,8 @@ fun NeroResultLayout(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .padding(innerPadding)
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.background)
+                    .padding(innerPadding)
             ) {
                 if (windowConfig != WindowConfig.MobileLandscape) {
                     NeroBrandLogo()
