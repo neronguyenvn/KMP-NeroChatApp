@@ -79,7 +79,7 @@ fun NeroResultLayoutPreview() {
         NeroResultLayout(
             modifier = Modifier.fillMaxSize(),
             content = {
-                Column(modifier = Modifier.padding(24.dp)) {
+                Column(modifier = Modifier.padding(vertical = 24.dp)) {
                     Text(
                         text = "Registration successful!",
                         style = MaterialTheme.typography.titleLarge,

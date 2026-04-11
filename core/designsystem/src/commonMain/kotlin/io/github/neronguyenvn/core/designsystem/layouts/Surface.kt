@@ -2,8 +2,9 @@ package io.github.neronguyenvn.core.designsystem.layouts
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,19 +33,14 @@ internal fun NeroSurface(
         color = MaterialTheme.colorScheme.background,
         modifier = modifier
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
-        ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             if (header != null) {
                 header()
             }
 
             Surface(
                 color = MaterialTheme.colorScheme.surface,
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
+                modifier = Modifier.weight(1f),
                 shape = RoundedCornerShape(
                     topStart = 16.dp,
                     topEnd = 16.dp
@@ -54,7 +50,6 @@ internal fun NeroSurface(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(top = 24.dp)
                         .padding(horizontal = 16.dp)
                         .verticalScroll(rememberScrollState())
                 ) {
@@ -79,6 +74,7 @@ fun NeroSurfacePreview() {
                 )
             },
             content = {
+                Spacer(modifier = Modifier.height(24.dp))
                 Text(
                     text = "Welcome to Nero Chat!",
                     style = MaterialTheme.typography.titleLarge,
