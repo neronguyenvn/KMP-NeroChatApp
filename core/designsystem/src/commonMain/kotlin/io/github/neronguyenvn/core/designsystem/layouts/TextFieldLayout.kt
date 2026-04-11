@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.designsystem.components.internal
+package io.github.neronguyenvn.core.designsystem.layouts
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

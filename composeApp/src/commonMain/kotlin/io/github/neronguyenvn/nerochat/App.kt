@@ -5,7 +5,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import io.github.neronguyenvn.core.designsystem.components.NeroBrandLogo
-import io.github.neronguyenvn.core.designsystem.components.NeroFormLayout
+import io.github.neronguyenvn.core.designsystem.layouts.NeroFormLayout
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 
 @PreviewLightDark

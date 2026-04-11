@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.designsystem.components
+package io.github.neronguyenvn.core.designsystem.layouts
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -23,7 +23,7 @@ import kmpnerochatapp.core.designsystem.generated.resources.logo_chirp
 import org.jetbrains.compose.resources.vectorResource
 
 @Composable
-fun NeroSurface(
+internal fun NeroSurface(
     modifier: Modifier = Modifier,
     header: @Composable (ColumnScope.() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit

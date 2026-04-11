@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.designsystem.components
+package io.github.neronguyenvn.core.designsystem.layouts
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
+import io.github.neronguyenvn.core.designsystem.components.NeroBrandLogo
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 import io.github.neronguyenvn.core.designsystem.theme.extended
 import io.github.neronguyenvn.core.designsystem.util.WindowConfig

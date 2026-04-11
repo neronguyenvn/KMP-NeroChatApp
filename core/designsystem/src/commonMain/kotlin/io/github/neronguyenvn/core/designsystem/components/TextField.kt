@@ -26,7 +26,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import io.github.neronguyenvn.core.designsystem.components.internal.TextFieldLayout
+import io.github.neronguyenvn.core.designsystem.layouts.TextFieldLayout
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 import io.github.neronguyenvn.core.designsystem.theme.extended
 import kmpnerochatapp.core.designsystem.generated.resources.Res
