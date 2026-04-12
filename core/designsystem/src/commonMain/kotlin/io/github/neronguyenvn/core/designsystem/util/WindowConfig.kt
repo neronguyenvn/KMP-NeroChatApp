@@ -21,12 +21,12 @@ enum class WindowConfig {
 
 private fun WindowSizeClass.asWindowConfig(): WindowConfig {
     return when {
-        !isWidthAtLeastBreakpoint(WIDTH_DP_MEDIUM_LOWER_BOUND) -> {
-            WindowConfig.MobilePortrait
-        }
-
         !isHeightAtLeastBreakpoint(HEIGHT_DP_MEDIUM_LOWER_BOUND) -> {
             WindowConfig.MobileLandscape
+        }
+
+        !isWidthAtLeastBreakpoint(WIDTH_DP_MEDIUM_LOWER_BOUND) -> {
+            WindowConfig.MobilePortrait
         }
 
         isWidthAtLeastBreakpoint(WIDTH_DP_EXPANDED_LOWER_BOUND) &&
