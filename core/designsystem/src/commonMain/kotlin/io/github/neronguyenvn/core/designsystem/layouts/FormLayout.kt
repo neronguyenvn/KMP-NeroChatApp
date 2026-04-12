@@ -100,7 +100,7 @@ fun NeroFormLayout(
                             .width(480.dp)
                             .clip(RoundedCornerShape(16.dp))
                             .background(MaterialTheme.colorScheme.surface)
-                            .padding(vertical = 24.dp)
+                            .padding(24.dp)
                     ) {
                         AuthHeaderSection(
                             headerText = headerText,
@@ -134,7 +134,7 @@ private fun ColumnScope.AuthHeaderSection(
         color = headerColor,
     )
 
-    AnimatedVisibility(visible = errorText != null) {
+    AnimatedVisibility(visible = !errorText.isNullOrBlank()) {
         Text(
             text = errorText.orEmpty(),
             style = MaterialTheme.typography.labelSmall,
