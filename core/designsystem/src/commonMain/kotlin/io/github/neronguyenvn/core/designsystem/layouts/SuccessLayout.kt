@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -64,26 +65,28 @@ fun NeroSuccessLayout(
 @PreviewLightDark
 @Composable
 fun NeroSuccessLayoutPreview() {
-    NeroTheme(darkTheme = true) {
-        NeroSuccessLayout(
-            title = "Hello world!",
-            description = "Test description",
-            icon = { NeroSuccessIcon() },
-            primaryButton = {
-                NeroButton(
-                    text = "Log In",
-                    onClick = {},
-                    modifier = Modifier.fillMaxWidth()
-                )
-            },
-            secondaryButton = {
-                NeroButton(
-                    text = "Resend verification email",
-                    onClick = {},
-                    style = NeroButtonStyle.Secondary,
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-        )
+    NeroTheme {
+        Surface {
+            NeroSuccessLayout(
+                title = "Hello world!",
+                description = "Test description",
+                icon = { NeroSuccessIcon() },
+                primaryButton = {
+                    NeroButton(
+                        text = "Log In",
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                },
+                secondaryButton = {
+                    NeroButton(
+                        text = "Resend verification email",
+                        onClick = {},
+                        style = NeroButtonStyle.Secondary,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            )
+        }
     }
 }
