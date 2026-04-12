@@ -10,9 +10,14 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -102,7 +107,7 @@ fun NeroButton(
     }
 
     Button(
-        onClick = onClick,
+        onClick = { if (!isLoading) onClick() },
         modifier = modifier,
         enabled = enabled,
         shape = RoundedCornerShape(8.dp),
@@ -114,14 +119,11 @@ fun NeroButton(
                 CircularProgressIndicator(
                     modifier = Modifier.size(16.dp),
                     strokeWidth = 1.5.dp,
-                    color = Color.Black
+                    color = LocalContentColor.current
                 )
             }
             Row(
-                horizontalArrangement = Arrangement.spacedBy(
-                    space = 8.dp,
-                    alignment = Alignment.CenterHorizontally
-                ),
+                horizontalArrangement = Arrangement.spacedBy(space = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.alpha(if (isLoading) 0f else 1f)
             ) {
@@ -141,10 +143,12 @@ fun NeroButtonPreview() {
     NeroTheme {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
             NeroButtonStyle.entries.forEach {
+                var isLoading by remember { mutableStateOf(false) }
                 NeroButton(
                     text = "Hello world!",
-                    onClick = {},
-                    style = it
+                    onClick = { isLoading = !isLoading },
+                    style = it,
+                    isLoading = isLoading
                 )
             }
         }
