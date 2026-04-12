@@ -58,7 +58,7 @@ fun NeroFloatingActionButton(
 
 @PreviewLightDark
 @Composable
-fun NeroIconButtonPreview() {
+private fun NeroIconButtonPreview() {
     NeroTheme {
         NeroIconButton(onClick = {}) {
             Icon(
@@ -71,7 +71,7 @@ fun NeroIconButtonPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroFloatingActionButtonPreview() {
+private fun NeroFloatingActionButtonPreview() {
     NeroTheme {
         NeroFloatingActionButton(onClick = {}) {
             Icon(

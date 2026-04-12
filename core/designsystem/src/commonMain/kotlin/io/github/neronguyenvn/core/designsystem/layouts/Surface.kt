@@ -61,7 +61,7 @@ internal fun NeroSurface(
 
 @PreviewLightDark
 @Composable
-fun NeroSurfacePreview() {
+private fun NeroSurfacePreview() {
     NeroTheme {
         NeroSurface(
             header = {

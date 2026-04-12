@@ -79,7 +79,7 @@ fun NeroResultLayout(
 @PreviewLightDark
 @PreviewScreenSizes
 @Composable
-fun NeroResultLayoutPreview() {
+private fun NeroResultLayoutPreview() {
     NeroTheme {
         NeroResultLayout(
             modifier = Modifier.fillMaxSize(),

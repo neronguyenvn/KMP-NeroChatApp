@@ -148,7 +148,7 @@ private fun ColumnScope.AuthHeaderSection(
 @PreviewLightDark
 @PreviewScreenSizes
 @Composable
-fun NeroFormLayoutPreview() {
+private fun NeroFormLayoutPreview() {
     NeroTheme {
         NeroFormLayout(
             headerText = "Welcome to Nero!",

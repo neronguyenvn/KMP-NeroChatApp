@@ -151,7 +151,7 @@ fun NeroPasswordTextField(
 
 @PreviewLightDark
 @Composable
-fun NeroTextFieldEmptyPreview() {
+private fun NeroTextFieldEmptyPreview() {
     NeroTheme {
         NeroTextField(
             state = rememberTextFieldState(),
@@ -165,7 +165,7 @@ fun NeroTextFieldEmptyPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroTextFieldFilledPreview() {
+private fun NeroTextFieldFilledPreview() {
     NeroTheme {
         NeroTextField(
             state = rememberTextFieldState(
@@ -181,7 +181,7 @@ fun NeroTextFieldFilledPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroTextFieldDisabledPreview() {
+private fun NeroTextFieldDisabledPreview() {
     NeroTheme {
         NeroTextField(
             state = rememberTextFieldState(),
@@ -196,7 +196,7 @@ fun NeroTextFieldDisabledPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroTextFieldErrorPreview() {
+private fun NeroTextFieldErrorPreview() {
     NeroTheme {
         NeroTextField(
             state = rememberTextFieldState(),
@@ -211,7 +211,7 @@ fun NeroTextFieldErrorPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroPasswordTextFieldEmptyPreview() {
+private fun NeroPasswordTextFieldEmptyPreview() {
     NeroTheme {
         NeroPasswordTextField(
             state = rememberTextFieldState(),
@@ -225,7 +225,7 @@ fun NeroPasswordTextFieldEmptyPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroPasswordTextFieldFilledPreview() {
+private fun NeroPasswordTextFieldFilledPreview() {
     NeroTheme {
         NeroPasswordTextField(
             state = rememberTextFieldState("password123"),
@@ -239,7 +239,7 @@ fun NeroPasswordTextFieldFilledPreview() {
 
 @PreviewLightDark
 @Composable
-fun NeroPasswordTextFieldErrorPreview() {
+private fun NeroPasswordTextFieldErrorPreview() {
     NeroTheme {
         NeroPasswordTextField(
             state = rememberTextFieldState("password123"),

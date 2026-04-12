@@ -64,7 +64,7 @@ fun NeroSuccessLayout(
 
 @PreviewLightDark
 @Composable
-fun NeroSuccessLayoutPreview() {
+private fun NeroSuccessLayoutPreview() {
     NeroTheme {
         Surface {
             NeroSuccessLayout(
