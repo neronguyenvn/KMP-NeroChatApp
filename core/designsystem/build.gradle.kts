@@ -33,7 +33,14 @@ kotlin {
             dependencies {
                 implementation(libs.jetbrains.compose.components.resources)
                 implementation(libs.jetbrains.compose.material3)
+                implementation(libs.jetbrains.compose.material3.adaptive.layout)
+                implementation(libs.jetbrains.compose.material.icons.core)
+                implementation(libs.jetbrains.compose.ui.tooling.preview)
             }
         }
     }
+}
+
+dependencies {
+    androidRuntimeClasspath(libs.jetbrains.compose.ui.tooling)
 }
