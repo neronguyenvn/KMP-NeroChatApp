@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.github.neronguyenvn.core.designsystem.theme.extended
@@ -32,9 +33,10 @@ internal fun TextFieldLayout(
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     val isFocused by interactionSource.collectIsFocusedAsState()
+    val currentOnFocusChanged by rememberUpdatedState(onFocusChanged)
 
     LaunchedEffect(isFocused) {
-        onFocusChanged?.invoke(isFocused)
+        currentOnFocusChanged?.invoke(isFocused)
     }
 
     val textFieldModifier = Modifier
