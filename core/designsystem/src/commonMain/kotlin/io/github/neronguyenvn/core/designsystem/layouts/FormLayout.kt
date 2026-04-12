@@ -1,7 +1,6 @@
 package io.github.neronguyenvn.core.designsystem.layouts
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -14,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -94,20 +94,22 @@ fun NeroFormLayout(
                 ) {
                     logo()
                     Spacer(modifier = Modifier.height(32.dp))
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier
-                            .width(480.dp)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(MaterialTheme.colorScheme.surface)
-                            .padding(24.dp)
+                    Surface(
+                        modifier = Modifier.clip(RoundedCornerShape(16.dp))
                     ) {
-                        AuthHeaderSection(
-                            headerText = headerText,
-                            errorText = errorText
-                        )
-                        Spacer(modifier = Modifier.height(24.dp))
-                        formContent()
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier
+                                .width(480.dp)
+                                .padding(24.dp)
+                        ) {
+                            AuthHeaderSection(
+                                headerText = headerText,
+                                errorText = errorText
+                            )
+                            Spacer(modifier = Modifier.height(24.dp))
+                            formContent()
+                        }
                     }
                 }
             }

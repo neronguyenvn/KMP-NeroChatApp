@@ -39,7 +39,6 @@ internal fun NeroSurface(
             }
 
             Surface(
-                color = MaterialTheme.colorScheme.surface,
                 modifier = Modifier.weight(1f),
                 shape = RoundedCornerShape(
                     topStart = 16.dp,
