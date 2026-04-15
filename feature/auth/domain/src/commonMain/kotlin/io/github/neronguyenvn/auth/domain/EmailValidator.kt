@@ -10,6 +10,7 @@ object EmailValidator {
 
     fun validate(email: String): Either<EmailError, String> = either {
         val trimmedEmail = email.trim()
+        ensure(trimmedEmail.isNotEmpty()) { EmailError.Empty }
         ensure(emailRegex.matches(trimmedEmail)) { EmailError.Invalid }
         trimmedEmail
     }
