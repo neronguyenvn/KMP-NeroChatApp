@@ -9,9 +9,11 @@ object PasswordValidator {
     private const val MIN_PASSWORD_LENGTH = 8
 
     fun validate(password: String): Either<PasswordError, String> = either {
-        ensure(password.length >= MIN_PASSWORD_LENGTH) { PasswordError.TooShort }
-        ensure(password.any { it.isDigit() }) { PasswordError.NoDigit }
-        ensure(password.any { it.isUpperCase() }) { PasswordError.NoUppercase }
-        password
+        val trimmedPassword = password.trim()
+        ensure(trimmedPassword.length >= MIN_PASSWORD_LENGTH) { PasswordError.TooShort }
+        ensure(trimmedPassword.any { it.isDigit() }) { PasswordError.NoDigit }
+        ensure(trimmedPassword.any { it.isUpperCase() }) { PasswordError.NoUppercase }
+        ensure(trimmedPassword.none { it.isWhitespace() }) { PasswordError.HasWhiteSpace }
+        trimmedPassword
     }
 }
