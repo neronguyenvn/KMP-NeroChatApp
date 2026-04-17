@@ -2,7 +2,7 @@ package io.github.neronguyenvn.core.designsystem.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicSecureTextField
 import androidx.compose.foundation.text.BasicTextField
@@ -70,7 +70,10 @@ fun NeroTextField(
             interactionSource = interactionSource,
             modifier = textFieldModifier,
             decorator = { innerBox ->
-                Box {
+                Box(
+                    contentAlignment = Alignment.CenterStart,
+                    modifier = Modifier.padding(horizontal = 12.dp)
+                ) {
                     if (state.text.isEmpty() && placeholder != null) {
                         Text(
                             text = placeholder,
@@ -100,8 +103,8 @@ fun NeroPasswordTextField(
 
     TextFieldLayout(
         title = title,
-        isError = isError,
         supportingText = supportingText,
+        isError = isError,
         onFocusChanged = onFocusChanged,
         modifier = modifier
     ) { textFieldModifier, interactionSource ->
@@ -121,8 +124,8 @@ fun NeroPasswordTextField(
             modifier = textFieldModifier,
             decorator = { innerBox ->
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(start = 12.dp, end = 4.dp)
                 ) {
                     Box(modifier = Modifier.weight(1f)) {
                         if (state.text.isEmpty() && placeholder != null) {
