@@ -1,6 +1,6 @@
 package io.github.neronguyenvn.core.data.network
 
-import io.github.neronguyenvn.core.domain.util.DataError
+import io.github.neronguyenvn.core.domain.model.error.DataError
 import io.ktor.client.engine.darwin.DarwinHttpRequestException
 import io.ktor.client.plugins.HttpRequestTimeoutException
 import io.ktor.util.network.UnresolvedAddressException

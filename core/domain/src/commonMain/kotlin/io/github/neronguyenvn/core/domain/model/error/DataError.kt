@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.domain.util
+package io.github.neronguyenvn.core.domain.model.error
 
 sealed interface DataError {
     enum class Network : DataError {

@@ -2,7 +2,7 @@ package io.github.neronguyenvn.core.data.network
 
 import arrow.core.Either
 import arrow.core.raise.either
-import io.github.neronguyenvn.core.domain.util.DataError
+import io.github.neronguyenvn.core.domain.model.error.DataError
 import io.ktor.client.HttpClient
 import io.ktor.client.call.NoTransformationFoundException
 import io.ktor.client.call.body

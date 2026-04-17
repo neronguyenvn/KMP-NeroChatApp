@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.neronguyenvn.nerochat"
+    namespace = "io.github.neronguyenvn.nerochat.androidapp"
 
     compileSdk {
         version = release(36)

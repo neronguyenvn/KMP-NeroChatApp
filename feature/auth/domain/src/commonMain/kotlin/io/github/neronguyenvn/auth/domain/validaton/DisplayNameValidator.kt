@@ -1,8 +1,9 @@
-package io.github.neronguyenvn.auth.domain
+package io.github.neronguyenvn.auth.domain.validaton
 
 import arrow.core.Either
 import arrow.core.raise.either
 import arrow.core.raise.ensure
+import io.github.neronguyenvn.auth.domain.model.error.DisplayNameError
 
 object DisplayNameValidator {
 

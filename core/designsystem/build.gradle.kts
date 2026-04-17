@@ -9,7 +9,7 @@ kotlin {
     android {
         compileSdk = 36
         minSdk = 26
-        namespace = "io.github.neronguyenvn.nerochat.designsystem"
+        namespace = "io.github.neronguyenvn.core.designsystem"
 
         androidResources {
             enable = true
