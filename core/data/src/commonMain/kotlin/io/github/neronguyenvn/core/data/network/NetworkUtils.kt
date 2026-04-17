@@ -107,6 +107,7 @@ fun HttpStatusCode.asDataError() = when (this) {
     HttpStatusCode.Unauthorized -> DataError.Network.Unauthorized
     HttpStatusCode.Forbidden -> DataError.Network.Forbidden
     HttpStatusCode.NotFound -> DataError.Network.NotFound
+    HttpStatusCode.Conflict -> DataError.Network.Conflict
     HttpStatusCode.RequestTimeout -> DataError.Network.RequestTimeout
     HttpStatusCode.PayloadTooLarge -> DataError.Network.PayloadTooLarge
     HttpStatusCode.TooManyRequests -> DataError.Network.TooManyRequests

@@ -7,6 +7,7 @@ sealed interface DataError {
         Unauthorized,
         Forbidden,
         NotFound,
+        Conflict,
         TooManyRequests,
         NoInternet,
         PayloadTooLarge,
