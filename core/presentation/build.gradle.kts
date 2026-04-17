@@ -10,6 +10,10 @@ kotlin {
         compileSdk = 36
         minSdk = 26
         namespace = "io.github.neronguyenvn.core.presentation"
+
+        androidResources {
+            enable = true
+        }
     }
 
     listOf(
@@ -33,4 +37,8 @@ kotlin {
             }
         }
     }
+}
+
+dependencies {
+    androidRuntimeClasspath(libs.jetbrains.compose.ui.tooling)
 }

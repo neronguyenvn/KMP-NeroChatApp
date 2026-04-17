@@ -31,10 +31,10 @@ import io.github.neronguyenvn.core.designsystem.util.currentWindowConfig
 @Composable
 fun NeroFormLayout(
     headerText: String,
+    modifier: Modifier = Modifier,
     errorText: String? = null,
     logo: @Composable () -> Unit,
     formContent: @Composable ColumnScope.() -> Unit,
-    modifier: Modifier = Modifier
 ) {
     when (currentWindowConfig()) {
         WindowConfig.MobilePortrait -> {
