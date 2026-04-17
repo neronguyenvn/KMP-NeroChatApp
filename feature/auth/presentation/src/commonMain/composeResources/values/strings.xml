@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="error_email_empty">Email cannot be empty</string>
+    <string name="error_email_invalid">Invalid email format</string>
+    <string name="error_display_name_empty">Display name cannot be empty</string>
+    <string name="error_display_name_invalid">Display name is invalid</string>
+</resources>
