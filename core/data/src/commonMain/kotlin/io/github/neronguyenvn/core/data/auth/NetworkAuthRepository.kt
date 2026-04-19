@@ -1,7 +1,7 @@
 package io.github.neronguyenvn.core.data.auth
 
 import arrow.core.Either
-import io.github.neronguyenvn.core.data.auth.model.RegisterRequest
+import io.github.neronguyenvn.core.data.auth.model.register.RegisterRequest
 import io.github.neronguyenvn.core.data.network.post
 import io.github.neronguyenvn.core.domain.auth.AuthRepository
 import io.github.neronguyenvn.core.domain.model.error.DataError

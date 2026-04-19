@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.data.auth.model
+package io.github.neronguyenvn.core.data.auth.model.register
 
 import kotlinx.serialization.Serializable
 
