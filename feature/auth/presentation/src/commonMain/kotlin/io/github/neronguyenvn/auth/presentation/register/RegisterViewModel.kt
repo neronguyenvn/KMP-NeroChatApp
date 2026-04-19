@@ -5,13 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.neronguyenvn.auth.domain.validaton.DisplayNameValidator
 import io.github.neronguyenvn.auth.domain.validaton.EmailValidator
+import io.github.neronguyenvn.core.domain.auth.AuthRepository
 import io.github.neronguyenvn.core.domain.auth.validation.PasswordValidator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
-class RegisterViewModel : ViewModel() {
+class RegisterViewModel(
+    private val authRepository: AuthRepository
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(RegisterUiState())
     val uiState = _uiState.stateIn(
@@ -31,8 +35,42 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
+    private fun register() {
+        if (!validateInputs()) {
+            return
+        }
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(isRegistering = true) }
+
+            val email = emailState.text.toString()
+            val displayName = displayNameState.text.toString()
+            val password = passwordState.text.toString()
+
+            authRepository.register(
+                email = email,
+                displayName = displayName,
+                password = password
+            ).fold(
+                ifLeft = { error ->
+                    _uiState.update {
+                        it.copy(
+                            isRegistering = false,
+                            registrationError = error
+                        )
+                    }
+                },
+                ifRight = {
+                    _uiState.update {
+                        it.copy(isRegistering = false)
+                    }
+                }
+            )
+        }
+    }
+
     private fun validateInputs(): Boolean {
-        resetInputErrors()
+        resetErrors()
 
         val emailResult = EmailValidator.validate(emailState.text.toString())
         val nameResult = DisplayNameValidator.validate(displayNameState.text.toString())
@@ -49,12 +87,13 @@ class RegisterViewModel : ViewModel() {
         return emailResult.isRight() && nameResult.isRight() && passResult.isRight()
     }
 
-    private fun resetInputErrors() {
+    private fun resetErrors() {
         _uiState.update {
             it.copy(
                 emailError = null,
                 displayNameError = null,
-                passwordError = null
+                passwordError = null,
+                registrationError = null
             )
         }
     }

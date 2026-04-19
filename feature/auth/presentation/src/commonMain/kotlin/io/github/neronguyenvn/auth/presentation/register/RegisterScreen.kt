@@ -56,7 +56,7 @@ internal fun RegisterScreen(
 ) {
     NeroFormLayout(
         headerText = stringResource(Res.string.welcome_to_chat),
-        errorText = null,
+        errorText = uiState.registrationError?.asString(),
         logo = { NeroBrandLogo() }
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
