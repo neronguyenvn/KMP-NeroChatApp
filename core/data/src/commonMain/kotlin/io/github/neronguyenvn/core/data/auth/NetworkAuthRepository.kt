@@ -4,6 +4,7 @@ import arrow.core.Either
 import io.github.neronguyenvn.core.data.auth.model.register.RegisterRequest
 import io.github.neronguyenvn.core.data.network.post
 import io.github.neronguyenvn.core.domain.auth.AuthRepository
+import io.github.neronguyenvn.core.domain.auth.model.error.RegisterError
 import io.github.neronguyenvn.core.domain.model.error.DataError
 import io.ktor.client.HttpClient
 
@@ -15,8 +16,8 @@ internal class NetworkAuthRepository(
         email: String,
         displayName: String,
         password: String
-    ): Either<DataError.Network, Unit> {
-        return httpClient.post(
+    ): Either<RegisterError, Unit> = httpClient
+        .post<RegisterRequest, Unit>(
             route = "/auth/register",
             body = RegisterRequest(
                 email = email,
@@ -24,5 +25,8 @@ internal class NetworkAuthRepository(
                 password = password
             )
         )
-    }
+        .mapLeft { error ->
+            if (error == DataError.Network.Conflict) RegisterError.UserAlreadyExists
+            else RegisterError.Network(error)
+        }
 }

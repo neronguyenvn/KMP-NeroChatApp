@@ -19,4 +19,5 @@
     <string name="error_password_no_digit">Password must contain at least one digit</string>
     <string name="error_password_no_uppercase">Password must contain at least one uppercase letter</string>
     <string name="error_password_has_whitespace">Password cannot contain whitespace</string>
+    <string name="error_user_already_exists">An user with this email already exists</string>
 </resources>
