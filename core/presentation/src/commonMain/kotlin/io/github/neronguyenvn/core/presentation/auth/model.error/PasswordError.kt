@@ -1,7 +1,7 @@
-package io.github.neronguyenvn.core.presentation.model.error
+package io.github.neronguyenvn.core.presentation.auth.model.error
 
 import androidx.compose.runtime.Composable
-import io.github.neronguyenvn.core.domain.model.error.PasswordError
+import io.github.neronguyenvn.core.domain.auth.model.error.PasswordError
 import kmpnerochatapp.core.presentation.generated.resources.Res
 import kmpnerochatapp.core.presentation.generated.resources.error_password_has_whitespace
 import kmpnerochatapp.core.presentation.generated.resources.error_password_no_digit

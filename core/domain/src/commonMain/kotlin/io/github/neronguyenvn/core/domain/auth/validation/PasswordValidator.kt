@@ -1,9 +1,9 @@
-package io.github.neronguyenvn.core.domain.validation
+package io.github.neronguyenvn.core.domain.auth.validation
 
 import arrow.core.Either
 import arrow.core.raise.either
 import arrow.core.raise.ensure
-import io.github.neronguyenvn.core.domain.model.error.PasswordError
+import io.github.neronguyenvn.core.domain.auth.model.error.PasswordError
 
 object PasswordValidator {
 

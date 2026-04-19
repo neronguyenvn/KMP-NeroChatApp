@@ -22,7 +22,7 @@ import io.github.neronguyenvn.core.designsystem.components.NeroPasswordTextField
 import io.github.neronguyenvn.core.designsystem.components.NeroTextField
 import io.github.neronguyenvn.core.designsystem.layouts.NeroFormLayout
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
-import io.github.neronguyenvn.core.presentation.model.error.asString
+import io.github.neronguyenvn.core.presentation.auth.model.error.asString
 import kmpnerochatapp.feature.auth.presentation.generated.resources.Res
 import kmpnerochatapp.feature.auth.presentation.generated.resources.display_name_placeholder
 import kmpnerochatapp.feature.auth.presentation.generated.resources.email

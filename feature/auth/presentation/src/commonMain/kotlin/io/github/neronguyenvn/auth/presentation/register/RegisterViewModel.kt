@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.neronguyenvn.auth.domain.validaton.DisplayNameValidator
 import io.github.neronguyenvn.auth.domain.validaton.EmailValidator
-import io.github.neronguyenvn.core.domain.validation.PasswordValidator
+import io.github.neronguyenvn.core.domain.auth.validation.PasswordValidator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn

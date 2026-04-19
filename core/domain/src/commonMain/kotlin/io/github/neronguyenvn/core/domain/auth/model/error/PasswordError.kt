@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.core.domain.model.error
+package io.github.neronguyenvn.core.domain.auth.model.error
 
 sealed interface PasswordError {
     data object TooShort : PasswordError
