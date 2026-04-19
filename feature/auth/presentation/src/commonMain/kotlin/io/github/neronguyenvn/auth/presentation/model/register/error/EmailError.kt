@@ -1,4 +1,4 @@
-package io.github.neronguyenvn.auth.presentation.model.error
+package io.github.neronguyenvn.auth.presentation.model.register.error
 
 import androidx.compose.runtime.Composable
 import io.github.neronguyenvn.auth.domain.model.error.EmailError

@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import io.github.neronguyenvn.auth.presentation.model.error.asString
+import io.github.neronguyenvn.auth.presentation.model.register.error.asString
 import io.github.neronguyenvn.core.designsystem.components.NeroBrandLogo
 import io.github.neronguyenvn.core.designsystem.components.NeroButton
 import io.github.neronguyenvn.core.designsystem.components.NeroButtonStyle
