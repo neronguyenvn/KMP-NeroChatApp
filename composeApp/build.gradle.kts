@@ -34,9 +34,9 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            api(projects.core.data)
+            api(projects.feature.auth.presentation)
             implementation(projects.core.designsystem)
-            implementation(projects.core.data)
-            implementation(projects.feature.auth.presentation)
             implementation(libs.jetbrains.compose.components.resources)
             implementation(libs.jetbrains.compose.material3)
             implementation(libs.jetbrains.compose.ui.tooling.preview)
