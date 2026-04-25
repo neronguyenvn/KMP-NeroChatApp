@@ -8,7 +8,6 @@ import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 import io.github.neronguyenvn.auth.presentation.register.RegisterRoute
 import io.github.neronguyenvn.core.designsystem.theme.NeroTheme
 
-@PreviewLightDark
 @Composable
 fun ComposeApp(viewModelFactory: MetroViewModelFactory) {
     CompositionLocalProvider(

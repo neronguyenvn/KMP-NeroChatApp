@@ -21,7 +21,7 @@ androidx-activity = "1.13.0"
 # Third party
 arrow = "2.2.2.1"
 ktor = "3.4.3"
-metro = "1.0.0-RC3"
+metro = "1.0.0-RC4"
 
 [libraries]
 # Jetbrains Compose

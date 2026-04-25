@@ -7,12 +7,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.binding
 import dev.zacsweers.metrox.android.ActivityKey
 import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 
-@Inject
 @ActivityKey
 @ContributesIntoMap(AppScope::class, binding<Activity>())
 class MainActivity(private val viewModelFactory: MetroViewModelFactory) : ComponentActivity() {
