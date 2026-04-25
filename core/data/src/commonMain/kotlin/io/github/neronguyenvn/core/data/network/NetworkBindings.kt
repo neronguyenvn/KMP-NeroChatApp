@@ -1,5 +1,9 @@
 package io.github.neronguyenvn.core.data.network
 
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.BindingContainer
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.HttpTimeout
@@ -12,30 +16,32 @@ import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-class HttpClientFactory() {
+@BindingContainer
+@ContributesTo(AppScope::class)
+object NetworkBindings {
 
-    fun create(engine: HttpClientEngine): HttpClient {
+    @Provides
+    fun provideHttpClient(engine: HttpClientEngine): HttpClient {
+        val requestTimeoutMillis = 15_000L
+        val json = Json {
+            ignoreUnknownKeys = true
+        }
+
         return HttpClient(engine) {
-            install(HttpTimeout) {
-                requestTimeoutMillis = REQUEST_TIMEOUT_MILLIS
-            }
             install(WebSockets)
-            install(ContentNegotiation) {
-                json(
-                    json = Json {
-                        ignoreUnknownKeys = true
-                    }
-                )
+            install(Logging)
+
+            install(HttpTimeout) {
+                this.requestTimeoutMillis = requestTimeoutMillis
             }
+
+            install(ContentNegotiation) {
+                json(json = json)
+            }
+
             defaultRequest {
                 contentType(ContentType.Application.Json)
             }
-            install(Logging)
         }
-    }
-
-    companion object {
-        private const val REQUEST_TIMEOUT_MILLIS = 15_000L
-
     }
 }

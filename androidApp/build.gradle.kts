@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.metro.compiler)
 }
 
 android {
@@ -11,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        minSdk = 26
+        minSdk = 28
         applicationId = "io.github.neronguyenvn.nerochat"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,8 +34,10 @@ android {
 
 dependencies {
     implementation(projects.composeApp)
+    implementation(libs.jetbrains.compose.ui.tooling.preview)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.jetbrains.compose.ui.tooling.preview)
+    implementation(libs.metro.android)
+    implementation(libs.metrox.viewmodel.compose)
 }

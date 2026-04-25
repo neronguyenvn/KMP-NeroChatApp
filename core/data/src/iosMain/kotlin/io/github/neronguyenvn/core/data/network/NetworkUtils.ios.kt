@@ -16,7 +16,7 @@ import platform.Foundation.NSURLErrorResourceUnavailable
 import platform.Foundation.NSURLErrorTimedOut
 
 actual fun Exception.asNetworkError(): DataError.Network = when (this) {
-    is DarwinHttpRequestException -> asNetworkError()
+    is DarwinHttpRequestException -> this.asNetworkError()
     is UnresolvedAddressException -> DataError.Network.NoInternet
     is HttpRequestTimeoutException -> DataError.Network.RequestTimeout
     else -> DataError.Network.Unknown

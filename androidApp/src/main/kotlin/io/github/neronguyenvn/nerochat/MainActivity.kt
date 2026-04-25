@@ -1,24 +1,26 @@
 package io.github.neronguyenvn.nerochat
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.binding
+import dev.zacsweers.metrox.android.ActivityKey
+import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 
-class MainActivity : ComponentActivity() {
+@Inject
+@ActivityKey
+@ContributesIntoMap(AppScope::class, binding<Activity>())
+class MainActivity(private val viewModelFactory: MetroViewModelFactory) : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            App()
+            ComposeApp(viewModelFactory = viewModelFactory)
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }

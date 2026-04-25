@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import io.github.neronguyenvn.auth.presentation.model.register.error.asString
 import io.github.neronguyenvn.core.designsystem.components.NeroBrandLogo
 import io.github.neronguyenvn.core.designsystem.components.NeroButton
@@ -35,7 +35,7 @@ import kmpnerochatapp.feature.auth.presentation.generated.resources.welcome_to_c
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun RegisterRoute(viewModel: RegisterViewModel = viewModel { RegisterViewModel() }) {
+fun RegisterRoute(viewModel: RegisterViewModel = metroViewModel()) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     RegisterScreen(
         uiState = uiState,

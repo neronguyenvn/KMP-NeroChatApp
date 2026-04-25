@@ -1,8 +1,8 @@
 [versions]
 # Build tools
 agp = "9.1.0"
-composeBom = "2026.03.01"
-kotlin = "2.3.20"
+composeBom = "2026.04.01"
+kotlin = "2.3.21"
 
 # Jetbrains Compose
 compose-hot-reload = "1.0.0"
@@ -20,7 +20,8 @@ androidx-activity = "1.13.0"
 
 # Third party
 arrow = "2.2.2.1"
-ktor = "3.4.2"
+ktor = "3.4.3"
+metro = "1.0.0-RC3"
 
 [libraries]
 # Jetbrains Compose
@@ -54,15 +55,22 @@ ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
-[plugins]
-# Jetbrains Kotlin
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+# MetroX
+metro-android = { group = "dev.zacsweers.metro", name = "metrox-android", version.ref = "metro" }
+metrox-viewmodel-compose = { group = "dev.zacsweers.metro", name = "metrox-viewmodel-compose", version.ref = "metro" }
 
+[plugins]
 # Jetbrains Compose
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose-hot-reload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 
+# Jetbrains Kotlin
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+
 # Android
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+
+# Metro
+metro-compiler = { id = "dev.zacsweers.metro", version.ref = "metro" }

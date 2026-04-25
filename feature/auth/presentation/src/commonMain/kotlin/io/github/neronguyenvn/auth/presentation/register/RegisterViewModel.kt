@@ -3,6 +3,10 @@ package io.github.neronguyenvn.auth.presentation.register
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import io.github.neronguyenvn.auth.domain.validaton.DisplayNameValidator
 import io.github.neronguyenvn.auth.domain.validaton.EmailValidator
 import io.github.neronguyenvn.core.domain.auth.AuthRepository
@@ -13,6 +17,9 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+@Inject
+@ViewModelKey
+@ContributesIntoMap(AppScope::class)
 class RegisterViewModel(
     private val authRepository: AuthRepository
 ) : ViewModel() {

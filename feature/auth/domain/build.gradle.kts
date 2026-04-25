@@ -6,7 +6,7 @@ plugins {
 kotlin {
     android {
         compileSdk = 36
-        minSdk = 26
+        minSdk = 28
         namespace = "io.github.neronguyenvn.auth.domain"
     }
 
